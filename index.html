@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #03045e;
+            color: #caf0f8;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        nav a {
+            color: #caf0f8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ade8f4;
+        }
+
+        .hero {
+            max-width: 64rem;
+            margin-bottom: 6rem;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        h1 span {
+            color: #ade8f4;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            max-width: 36rem;
+            opacity: 0.9;
+        }
+
+        .projects {
+            margin-bottom: 6rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: #caf0f8;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:nth-child(even) {
+            background-color: #ade8f4;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+
+        .project-card:hover::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: #03045e;
+            opacity: 0.1;
+            border-radius: 0.75rem;
+        }
+
+        .project-category {
+            color: rgba(3, 4, 94, 0.7);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .project-title {
+            color: #03045e;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: auto;
+        }
+
+        .about-section {
+            max-width: 64rem;
+            margin: 6rem 0;
+            padding: 3rem;
+            background-color: rgba(173, 232, 244, 0.1);
+            border-radius: 1rem;
+        }
+
+        .about-section p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(173, 232, 244, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copyright {
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #caf0f8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ade8f4;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#play">Play</a>
+        <a href="#notes">Notes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <h1>
+            Hi. I'm <span>CHAGOURI HOUSSAM</span>.<br>
+            A full stack web developer .
+        </h1>
+        <p>
+            As a beginner web developer, I'm passionate about building experiences that are engaging, easy to use, and accessible to everyone.
+        </p>
+    </div>
+
+    <div class="projects">
+        <h2>In Progress.</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <span class="project-category">HELP SCOUT</span>
+                <h3 class="project-title">AI</h3>
+            </div>
+            <div class="project-card">
+                <span class="project-category">HELP SCOUT</span>
+                <h3 class="project-title">Articles</h3>
+            </div>
+            <div class="project-card">
+                <span class="project-category">FIGMA</span>
+                <h3 class="project-title">Plugins</h3>
+            </div>
+            <div class="project-card">
+                <span class="project-category">HELP SCOUT</span>
+                <h3 class="project-title">Mobile</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>
+            I am a beginner full-stack web developer with skills in both front-end and back-end development. 
+            I work with HTML, CSS, TypeScript, and Angular to build responsive user interfaces, and I use Java with Spring Boot for back-end development. 
+            I am also learning how to manage databases using PostgreSQL.
+        </p>
+        <p>
+            I am focused on creating user-friendly solutions and learning best practices to improve my skills. 
+            I aim to build projects that are both functional and visually appealing, 
+            and I stay updated on industry trends to provide effective solutions for different needs.
+        </p>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            © 2024 Chagouri Houssam - Portfolio
+        </div>
+        <div class="footer-links">
+            <a href="/github">Github</a>
+            <a href="/linkedin">LinkedIn</a>
+            <a href="/cv">CV</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
