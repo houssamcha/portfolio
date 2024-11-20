@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
+        /* Theme variables */
+        :root[data-theme="dark"] {
+            --bg-color: #03045e;
+            --text-color: #caf0f8;
+            --accent-color: #122529;
+        }
+
+        :root[data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #03045e;
+            --accent-color: #03045e;
+        }
+
+        /* Update body background and text */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem clamp(2rem, 5vw, 4rem);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Theme toggle button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -22,22 +70,46 @@
             min-height: 100vh;
             padding: 2rem;
         }
-
+        body {
+            max-width: 1200px;  /* Reduced from 1400px */
+            margin: 0 auto;
+            padding: 2rem clamp(2rem, 5vw, 4rem)
+        }
         nav {
             display: flex;
-            justify-content: flex-end;
+            justify-content:center;
             gap: 1.5rem;
             margin-bottom: 6rem;
         }
 
         nav a {
-            color: #caf0f8;
+            color: rgb(66, 135, 220);
             text-decoration: none;
             transition: color 0.3s ease;
         }
+body {
+    margin: 0; /* Remove default body margin */
+    padding-top: 80px; /* Adjust based on the navbar's height */
+}
+.theme-toggle {
+    position: fixed;
+    top: 80px; /* Adjust based on navbar height */
+    right: 20px;
+    z-index: 1100; /* Ensures it's above other elements */
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color); /* Your navbar background color */
+    z-index: 1000;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
         nav a:hover {
-            color: #ade8f4;
+            color: #183439;
         }
 
         .hero {
@@ -46,19 +118,45 @@
         }
 
         h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+        margin-top: 3rem; /* Adjust this value as needed */
+        text-align: center;
+    }
+            
+            justify-content: center;  /* Center horizontally */
+            align-items: center;      /* Center vertically */
+            height: 100vh;            /* Full viewport height for vertical centering */
+                   /* Center text */
+        
 
         h1 span {
-            color: #ade8f4;
+            color: #64b8c8;
         }
 
         .hero p {
             font-size: 1.125rem;
             max-width: 36rem;
             opacity: 0.9;
+        }
+
+        /* New button style */
+        .cv-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #ade8f4;
+            color: #03045e;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cv-button:hover {
+            background-color: #caf0f8;
+            transform: translateY(-2px);
         }
 
         .projects {
@@ -178,48 +276,393 @@
                 grid-template-columns: 1fr;
             }
         }
+        .parcours {
+            margin-bottom: 6rem;
+        }
+
+        .parcours h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .parcours-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .parcours-section {
+            flex: 1;
+            background-color: #caf0f8;
+            color: #03045e;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
     </style>
 </head>
 <body>
+    <!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Theme variables */
+        :root[data-theme="dark"] {
+            --bg-color: #03045e;
+            --text-color: #caf0f8;
+            --accent-color: #ade8f4;
+        }
+
+        :root[data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #03045e;
+            --accent-color: #03045e;
+        }
+
+        /* Update body background and text */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem clamp(2rem, 5vw, 4rem);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Theme toggle button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Additional theme-specific styles */
+        [data-theme="light"] .project-card {
+            background-color: #e6f3ff;
+        }
+
+        [data-theme="light"] .project-card:nth-child(even) {
+            background-color: #d1e8ff;
+        }
+
+        [data-theme="light"] .about-section {
+            background-color: rgba(3, 4, 94, 0.05);
+        }
+
+        [data-theme="light"] .footer-links a {
+            color: #03045e;
+        }
+
+        [data-theme="light"] .footer-links a:hover {
+            color: #0077ff;
+        }
+
+        [data-theme="light"] .skill-card {
+            background: rgba(3, 4, 94, 0.05);
+        }
+
+        [data-theme="light"] .skill-name {
+            color: #03045e;
+        }
+        .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(173, 232, 244, 0.1);
+    border-radius: 1rem;
+    aspect-ratio: 1/1;
+    margin-top: 2rem;
+    width: 80%;
+    animation: fadeIn 1.5s ease-in-out; /* Cool fade-in animation */
+}
+
+.image-placeholder {
+    width: 70%;
+    height: 70%;
+    background-color: rgba(173, 232, 244, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-placeholder:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Cool shadow effect */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+    </style>
+    <!-- Rest of your existing styles remain the same -->
+</head>
+<body>
+    <button class="theme-toggle" aria-label="Toggle theme">
+        ☀️
+    </button>
+
+    <!-- Rest of your existing HTML content remains the same -->
+
+    <script>
+        // Set initial theme
+        const themeToggle = document.querySelector('.theme-toggle');
+        const html = document.documentElement;
+        
+        // Function to set theme
+        function setTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            themeToggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+            
+            // Update cursor glow color based on theme
+            const cursorGlow = document.querySelector('.cursor-glow');
+            if (cursorGlow) {
+                if (theme === 'dark') {
+                    cursorGlow.style.background = 'radial-gradient(circle, rgba(173, 232, 244, 0.15) 0%, rgba(173, 232, 244, 0.05) 40%, rgba(173, 232, 244, 0) 70%)';
+                } else {
+                    cursorGlow.style.background = 'radial-gradient(circle, rgba(3, 4, 94, 0.15) 0%, rgba(3, 4, 94, 0.05) 40%, rgba(3, 4, 94, 0) 70%)';
+                }
+            }
+        }
+
+        // Set initial theme
+        setTheme('dark');
+
+        // Theme toggle click handler
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    </script>
+</body>
+</html>
+    <style>
+        .cursor-glow {
+            width: 500px;  /* Increased from 300px */
+            height: 500px; /* Increased from 300px */
+            background: radial-gradient(circle, 
+                rgba(173, 232, 244, 0.15) 0%, 
+                rgba(173, 232, 244, 0.05) 40%, 
+                rgba(173, 232, 244, 0) 70%
+            );
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s;
+            z-index: 9999;
+            mix-blend-mode: screen;
+        }
+        .skills-grid {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Align them vertically */
+    padding: 20px; /* Add some breathing room */
+}
+
+.skill-button {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Subtle gradient background */
+    border: none;
+    padding: 1px;
+    border-radius: 50%; /* Circular buttons */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.skill-button:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #a8edea, #fed6e3); /* Cool hover gradient */
+}
+
+.skill-icon {
+    width: 40px; /* Icon size */
+    height: 40px;
+    border-radius: 50%; /* Makes the icon itself circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    transition: transform 0.3s, border 0.3s; /* Smooth animations */
+}
+
+.skill-button:hover .skill-icon {
+    transform: rotate(10deg); /* Rotate the icon on hover for a playful effect */
+    border-color: #ffd700; /* Highlight border on hover */
+}
+
+        </style>
+        
+        <div class="cursor-glow"></div>
+        
+        <script>
+        const cursorGlow = document.querySelector('.cursor-glow');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        });
+        
+        // Optional: make glow bigger on interactive elements
+        document.querySelectorAll('a, button, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorGlow.style.width = '600px';   /* Increased from 400px */
+                cursorGlow.style.height = '600px';  /* Increased from 400px */
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursorGlow.style.width = '500px';   /* Increased from 300px */
+                cursorGlow.style.height = '500px';  /* Increased from 300px */
+            });
+        });
+        </script>
+        
+        <div class="cursor"></div>
+        
+        <script>
+        const cursor = document.querySelector('.cursor');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let speed = 0.2; // Adjust this for faster/slower follow speed
+        
+        // Update mouse position
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        // Smooth cursor follow animation
+        function animate() {
+            let distX = mouseX - cursorX;
+            let distY = mouseY - cursorY;
+            
+            cursorX += distX * speed;
+            cursorY += distY * speed;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animate);
+        }
+        animate();
+        
+        // Expand cursor on clickable elements
+        document.querySelectorAll('a, button, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('expand');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('expand');
+            });
+        });
+        
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+        });
+        
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+        });
+        
+        </script>
     <nav>
-        <a href="#work">Work</a>
+        <a href="#">Home</a>
         <a href="#about">About</a>
-        <a href="#play">Play</a>
-        <a href="#notes">Notes</a>
-        <a href="#contact">Contact</a>
+        <a href="#Parcours">Parcours</a>
+        <a href="#Skills">Skills</a>
+        <a href="mailto:chagourihoussam@gmail.com">Contact</a>
     </nav>
 
     <div class="hero">
+    <div class="hero-text">
         <h1>
             Hi. I'm <span>CHAGOURI HOUSSAM</span>.<br>
-            A full stack web developer .
+            A full stack web developer.
         </h1>
         <p>
             As a beginner web developer, I'm passionate about building experiences that are engaging, easy to use, and accessible to everyone.
         </p>
+        <a href="/CHAGOURI HOUSSAM.pdf" class="cv-button" download="Houssam_Chagouri_CV.pdf">DOWNLOAD CV</a>
     </div>
-
-    <div class="projects">
-        <h2>In Progress.</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <span class="project-category">HELP SCOUT</span>
-                <h3 class="project-title">AI</h3>
-            </div>
-            <div class="project-card">
-                <span class="project-category">HELP SCOUT</span>
-                <h3 class="project-title">Articles</h3>
-            </div>
-            <div class="project-card">
-                <span class="project-category">FIGMA</span>
-                <h3 class="project-title">Plugins</h3>
-            </div>
-            <div class="project-card">
-                <span class="project-category">HELP SCOUT</span>
-                <h3 class="project-title">Mobile</h3>
-            </div>
+    <div class="hero-image">
+        <div class="image-placeholder" style="background-image: url('/cropped-DSC_7217.JPG'); background-size: cover; background-position: center;">
+            <!-- Profile Image will be displayed here -->
         </div>
     </div>
+    
+</div>
+
+   <div class="skills-grid">
+    <!-- GitHub Button -->
+    <a href="https://github.com/houssamcha" target="_blank">
+        <button class="skill-button">
+            <img src="/logos/3f0dd5b7ff57762e5333e1d3c3ed6b0a.png" alt="Github" class="skill-icon">
+        </button>
+    </a>
+    
+    <!-- LinkedIn Button -->
+    <a href="https://ma.linkedin.com/in/houssam-chagouri-8024bb224?original_referer=https%3A%2F%2Fwww.google.com%2F" target="_blank">
+        <button class="skill-button">
+            <img src="/logos/9e6c3ce5fcb9214b163d1cb2d1c9bf8f.png" alt="LinkedIn" class="skill-icon">
+        </button>
+    </a>
+</div>
+
+
 
     <div id="about" class="about-section">
         <h2>About Me</h2>
@@ -235,15 +678,436 @@
         </p>
     </div>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .subtitle {
+            color: #ffffff;
+            font-size: clamp(14px, 2vw, 16px);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            width: 100%;
+            place-items: center;
+            place-content: center;
+        }
+
+        .skill-card {
+            position: relative;
+            width: 100%;
+            max-width: 180px;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(166, 138, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .skill-card:hover {
+            border-color: #a68aff;
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            width: clamp(40px, 8vw, 60px);
+            height: clamp(40px, 8vw, 60px);
+            margin-bottom: 0px;
+            transition: transform 0.3s ease;
+            object-fit: contain;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1);
+        }
+
+        .skill-name {
+            color: #fff;
+            font-size: clamp(14px, 1.5vw, 16px);
+            font-weight: 500;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .skill-percentage {
+            color: #a68aff;
+            font-weight: 600;
+            font-size: clamp(18px, 2.5vw, 24px);
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, minmax(150px, 180px));
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: repeat(6, minmax(150px, 180px));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(120px, 150px));
+                gap: 15px;
+                padding: 10px;
+            }
+
+            .skill-card {
+                padding: 15px;
+                max-width: 150px;
+            }
+        }
+
+        /* Base Styles */
+.timeline-section {
+    min-height: 100vh;
+    padding: 80px 24px;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.timeline-wrapper {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.timeline-block {
+    flex: 1;
+    position: relative;
+    background: rgba(124, 58, 237, 0.02);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    background: linear-gradient(to right, var(--text-color), #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: rgba(124, 58, 237, 0.2);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -44px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #7c3aed;
+    border: 2px solid var(--bg-color);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+}
+
+.timeline-content {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.3s ease;
+    max-width: 600px;
+    margin-left: 20px;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-year {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(124, 58, 237, 0.1);
+    border-radius: 100px;
+    color: #a78bfa;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.timeline-title {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.timeline-subtitle {
+    color: #94a3b8;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.timeline-desc {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .timeline-block {
+        padding: 20px;
+    }
+
+    .timeline-content {
+        max-width: 100%; /* Ensures it adapts to the screen width */
+        margin-left: 0; /* Aligns items properly for mobile */
+        padding: 16px; /* Slightly reduce padding for better fit */
+    }
+
+    .timeline-item::before {
+        left: -20px; /* Adjust bullet position for mobile screens */
+    }
+
+    .timeline {
+        padding-left: 20px; /* Reduce the timeline left padding */
+    }
+
+    .section-title {
+        font-size: 24px; /* Adjust title size for smaller screens */
+        margin-bottom: 24px;
+    }
+
+    .timeline-year {
+        font-size: 12px; /* Adjust year badge size */
+    }
+
+    .timeline-title {
+        font-size: 18px;
+    }
+
+    .timeline-subtitle {
+        font-size: 14px;
+    }
+
+    .timeline-desc {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-section {
+        padding: 40px 12px; /* Reduce padding for very small devices */
+    }
+
+    .timeline-content {
+        padding: 16px;
+    }
+
+    .timeline-item::before {
+        left: -15px; /* Fine-tune bullet alignment */
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .timeline-year {
+        font-size: 10px;
+    }
+
+    .timeline-title {
+        font-size: 16px;
+    }
+
+    .timeline-subtitle {
+        font-size: 12px;
+    }
+
+    .timeline-desc {
+        font-size: 11px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <section class="timeline-section" id="resume">
+        <div class="timeline-container">
+            <div class="headers" id="Parcours">
+                <h2>
+                    <i class="fas fa-briefcase"></i> Parcours Professional
+                </h2>
+            </div>
+            <div class="timeline-wrapper">
+                <!-- Education Timeline -->
+                <div class="timeline-block">
+                    <h2 class="section-title">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">2024 - 2025</span>
+                                <h3 class="timeline-title">Certification Full-Stack Java Angular</h3>
+                                <h4 class="timeline-subtitle">École Numérique Ahmed AL HANSALI (Simplon)</h4>
+                                <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Sep 2019 - Aug 2020</span>
+                                <h3 class="timeline-title">Technicien spécialisé de la maintenance en industrie agroalimentaire</h3>
+                                <h4 class="timeline-subtitle">ISIAO BENI MELLAL - Béni Mellal</h4>
+                                <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Sep 2019</span>
+                                <h3 class="timeline-title">Bacalaureat Science Physique</h3>
+                                <h4 class="timeline-subtitle">LYCEE EL KHAWARIZMI - SOUK SEBT</h4>
+                                <p class="timeline-desc">Focused on fundamental programming concepts and web
+                                    technologies. Completed internship at local tech company.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Timeline -->
+                <div class="timeline-block">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Jan 2023 - Avr 2023</span>
+                                <h3 class="timeline-title">Employé chez COSUMAR</h3>
+                                <h4 class="timeline-subtitle">Maintenance des machines industrielles</h4>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">May 2021 - Dec 2022</span>
+                                <h3 class="timeline-title">Employé chez ChaabiCash</h3>
+                                <h4 class="timeline-subtitle">PRÉSIDENCE DE L'UNIVERSITÉ SULTAN MOULAY SLIMANE</h4>
+                                <p class="timeline-desc">Developed responsive websites and implemented modern UI/UX
+                                    designs. Collaborated with design team on multiple projects.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <span class="timeline-year">Dec 2020 - Mar 2021</span>
+                                    <h3 class="timeline-title"> Employé chez Cashplus</h3>
+                                    <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="containers">
+        <div class="headers" id="Skills">
+            <h1>My Skills</h1>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="/logos/figma.png" alt="Figma" class="skill-icon">
+                <span class="skill-name">Figma</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/logos/programing.png" alt="Angular" class="skill-icon">
+                <span class="skill-name">Angular</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/logos/springboot.png.png" alt="springboot" class="skill-icon">
+                <span class="skill-name">Spring Boot</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/logos/pngwing.com.png" alt="PostgreSQL" class="skill-icon">
+                <span class="skill-name">PostgreSQL</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/logos/java.png" alt="java" class="skill-icon">
+                <span class="skill-name">Java</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/logos/typescript.png" alt="JavaScript" class="skill-icon">
+                <span class="skill-name">TypeScript</span>
+            </div>
+        </div>
+    </div>
+
+    
+
     <footer>
         <div class="copyright">
             © 2024 Chagouri Houssam - Portfolio
         </div>
         <div class="footer-links">
-            <a href="/github">Github</a>
-            <a href="/linkedin">LinkedIn</a>
-            <a href="/cv">CV</a>
-            <a href="/contact">Contact</a>
+            <a href="https://github.com/houssamcha">Github</a>
+            <a href="https://ma.linkedin.com/in/houssam-chagouri-8024bb224?original_referer=https%3A%2F%2Fwww.google.com%2F">LinkedIn</a>
+            <a href="/CHAGOURI HOUSSAM.pdf">CV</a>
+            <a href="mailto:chagourihoussam@gmail.com">Contact</a>
         </div>
     </footer>
 </body>
