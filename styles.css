@@ -24,7 +24,7 @@ body {
 /* Theme toggle button */
 .theme-toggle {
     position: fixed;
-    top: 20px;
+    bottom: 20px;;
     right: 20px;
     background: var(--text-color);
     color: var(--bg-color);
@@ -79,24 +79,24 @@ nav a {
     transition: color 0.3s ease;
 }
 body {
-margin: 0; /* Remove default body margin */
-padding-top: 80px; /* Adjust based on the navbar's height */
+    margin: 0; /* Remove default body margin */
+    padding-top: 80px; /* Adjust based on the navbar's height */
 }
 .theme-toggle {
-position: fixed;
-top: 80px; /* Adjust based on navbar height */
-right: 20px;
-z-index: 1100; /* Ensures it's above other elements */
-}
-nav {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-background-color: var(--bg-color); /* Your navbar background color */
-z-index: 1000;
-padding: 1rem 2rem;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 20px; /* Adjust based on navbar height */
+    right: 20px;
+    z-index: 1100; /* Ensures it's above other elements */
+    }
+    nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color); /* Your navbar background color */
+    z-index: 1000;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav a:hover {
@@ -309,7 +309,7 @@ body {
 /* Theme toggle button */
 .theme-toggle {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
     background: var(--text-color);
     color: var(--bg-color);
